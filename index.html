@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jan Kraege | NIQ Junior Consultant Customer Success</title>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --blue: #008f95;
+      --blue-dark: #00666b;
+      --red: #16213e;
+      --cream: #f4f8f8;
+      --cream-dark: #e3eeee;
+      --gold: #8ea6a8;
+      --tools: #c9f0ee;
+      --white: #ffffff;
+      --black: #1b1b1b;
+      --text: #303030;
+      --muted: #6f6f6f;
+      --border: #d6e4e5;
+      --shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .lang-en, .lang-de { display: none !important; }
+    body.show-de .lang-de { display: initial !important; }
+    body.show-en .lang-en { display: initial !important; }
+
+    body.show-de p.lang-de,
+    body.show-de div.lang-de,
+    body.show-de h1.lang-de,
+    body.show-de h2.lang-de,
+    body.show-de h3.lang-de,
+    body.show-de h4.lang-de,
+    body.show-de span.lang-de,
+    body.show-de strong.lang-de {
+      display: block !important;
+    }
+
+    body.show-en p.lang-en,
+    body.show-en div.lang-en,
+    body.show-en h1.lang-en,
+    body.show-en h2.lang-en,
+    body.show-en h3.lang-en,
+    body.show-en h4.lang-en,
+    body.show-en span.lang-en,
+    body.show-en strong.lang-en {
+      display: block !important;
+    }
+
+    body.show-de .inline.lang-de,
+    body.show-en .inline.lang-en { display: inline !important; }
+
+    body.show-de .application-tag.lang-de,
+    body.show-de .hero-pill.lang-de,
+    body.show-en .application-tag.lang-en,
+    body.show-en .hero-pill.lang-en {
+      display: inline-flex !important;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 16px 8%;
+      background: var(--blue);
+      box-shadow: 0 3px 18px rgba(0,0,0,0.12);
+      border-bottom: 5px solid var(--red);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 112px;
+      height: 48px;
+      background: var(--white);
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -1.5px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      position: relative;
+    }
+
+    .logo-mark::after {
+      content: "Customer Success";
+      position: absolute;
+      bottom: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 8px;
+      font-style: normal;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .logo-small {
+      display: block;
+      font-size: 10px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 17px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--tools); }
+
+    .language-toggle {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.8);
+      padding: 9px 15px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .language-toggle:hover {
+      background: var(--white);
+      color: var(--blue);
+    }
+
+    .nav-button {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--red);
+      font-weight: 800;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+
+    header {
+      min-height: 680px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--blue);
+      text-align: center;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(0,143,149,0.20), transparent 28%),
+        radial-gradient(circle at 84% 74%, rgba(0,143,149,0.12), transparent 25%),
+        linear-gradient(135deg, #ffffff 0%, #ececec 48%, #f4f4f4 100%);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,143,149,0.06) 0 1px, transparent 1px 90px),
+        linear-gradient(0deg, rgba(22,33,62,0.04) 0 1px, transparent 1px 90px);
+      opacity: 0.8;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -120px;
+      height: 260px;
+      background:
+        linear-gradient(90deg, rgba(0,143,149,0.98) 0 68%, rgba(22,33,62,0.96) 68% 82%, rgba(255,255,255,0.94) 82% 100%);
+      transform: skewY(-3deg);
+      opacity: 0.95;
+    }
+
+    .data-shape {
+      position: absolute;
+      z-index: 1;
+      border: 3px solid rgba(22,33,62,0.20);
+      border-radius: 999px;
+      opacity: 0.85;
+    }
+
+    .data-shape.one {
+      width: 320px;
+      height: 120px;
+      left: 6%;
+      top: 24%;
+      transform: rotate(-18deg);
+    }
+
+    .data-shape.two {
+      width: 360px;
+      height: 125px;
+      right: 7%;
+      top: 42%;
+      transform: rotate(16deg);
+      border-color: rgba(22,33,62,0.25);
+    }
+
+    .data-shape.three {
+      width: 260px;
+      height: 90px;
+      left: 35%;
+      bottom: 22%;
+      transform: rotate(7deg);
+      border-color: rgba(0,143,149,0.22);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      padding: 90px 10%;
+    }
+
+    .application-tag {
+      background: var(--blue);
+      color: var(--white);
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 24px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 26px rgba(0,143,149,0.18);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    header h1 {
+      font-size: 62px;
+      line-height: 1.05;
+      margin: 0;
+      color: var(--blue);
+      text-shadow: 0 3px 0 rgba(255,255,255,0.65);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    header h2 {
+      font-size: 26px;
+      font-weight: 500;
+      max-width: 960px;
+      margin: 22px auto 0;
+      color: #222222;
+    }
+
+    .tagline {
+      font-size: 18px;
+      max-width: 960px;
+      margin: 26px auto 0;
+      color: #555555;
+    }
+
+    .hero-pill {
+      align-items: center;
+      justify-content: center;
+      margin-top: 38px;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    }
+
+    section {
+      padding: 74px 8%;
+      max-width: 1300px;
+      margin: 0 auto;
+      scroll-margin-top: 100px;
+    }
+
+    h3 {
+      font-size: 43px;
+      color: var(--blue);
+      text-align: center;
+      margin: 0 0 18px;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .accent-line {
+      width: 92px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue), var(--red), var(--gold));
+      margin: 0 auto 34px;
+      border-radius: 999px;
+    }
+
+    .intro-box, .intro {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro-box p, .intro p {
+      font-size: 18px;
+      color: #374151;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+
+    .intro-box strong, .intro strong { color: var(--blue); }
+
+    .status-box {
+      max-width: 920px;
+      margin: 34px auto 0;
+      background: var(--white);
+      border-left: 8px solid var(--red);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .status-box h4 {
+      color: var(--blue);
+      font-size: 24px;
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .status-box p {
+      color: #374151;
+      font-size: 17px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .profile-grid, .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 550px));
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .profile-box, .program-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 42px;
+      min-height: 315px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-top: 7px solid var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-box::before,
+    .program-box::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 105px;
+      height: 105px;
+      background: rgba(0,143,149,0.10);
+      border-radius: 50%;
+    }
+
+    .profile-box:nth-child(2),
+    .profile-box:nth-child(3),
+    .program-box:nth-child(2),
+    .program-box:nth-child(3) {
+      border-top-color: var(--red);
+      background: #fffdf8;
+    }
+
+    .profile-box h4, .program-box h4 {
+      color: var(--blue);
+      font-size: 27px;
+      margin: 12px 0 14px;
+      font-weight: 700;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .profile-box p, .program-box p {
+      color: #374151;
+      font-size: 17px;
+      margin: 8px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emoji {
+      font-size: 38px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline {
+      max-width: 950px;
+      margin: 0 auto;
+      padding-left: 35px;
+      border-left: 5px solid var(--blue);
+    }
+
+    .timeline div {
+      margin-bottom: 24px;
+      font-size: 17px;
+      background: var(--white);
+      padding: 24px 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .timeline strong { color: var(--blue); }
+
+    .brand-band {
+      max-width: none;
+      background:
+        linear-gradient(rgba(22,33,62,0.93), rgba(22,33,62,0.96)),
+        radial-gradient(circle at 16% 20%, rgba(255,255,255,0.12), transparent 28%),
+        linear-gradient(120deg, #16213e 0%, #16213e 70%, #0c1224 100%);
+      color: var(--white);
+      padding: 84px 10%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 90px),
+        linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 90px);
+      opacity: 0.9;
+    }
+
+    .brand-band::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 150px;
+      border: 4px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      right: -80px;
+      bottom: 30px;
+      transform: rotate(-18deg);
+    }
+
+    .brand-band h3, .brand-band p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand-band h3 { color: var(--white); }
+
+    .brand-band p {
+      max-width: 960px;
+      margin: 12px auto;
+      font-size: 19px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.96);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card.accent {
+      background:
+        linear-gradient(180deg, rgba(248,243,232,0.65), rgba(255,255,255,0.98)),
+        var(--white);
+    }
+
+    .card h4 {
+      color: var(--blue);
+      font-size: 22px;
+      margin: 10px 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .card p {
+      color: #374151;
+      font-size: 16.5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight {
+      max-width: none;
+      background:
+        linear-gradient(rgba(248,243,232,0.92), rgba(248,243,232,0.96)),
+        radial-gradient(circle at 12% 22%, rgba(22,33,62,0.10), transparent 30%),
+        radial-gradient(circle at 86% 68%, rgba(0,143,149,0.12), transparent 25%);
+      color: var(--blue);
+      padding: 90px 10%;
+      text-align: center;
+      border-top: 8px solid var(--red);
+      scroll-margin-top: 90px;
+    }
+
+    .highlight h3 {
+      color: var(--blue);
+      font-size: 44px;
+      margin-bottom: 18px;
+    }
+
+    .highlight p {
+      max-width: 920px;
+      margin: 14px auto;
+      font-size: 19px;
+      line-height: 1.85;
+      color: #2b2b2b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 52px 10%;
+      background: var(--blue);
+      color: var(--white);
+      border-top: 8px solid var(--red);
+    }
+
+    footer p {
+      margin: 14px 0;
+      font-size: 17px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    footer strong {
+      font-size: 19px;
+      color: var(--white);
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    footer a { color: var(--tools); }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 1050px) {
+      nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      header h1 { font-size: 52px; }
+    }
+
+    @media (max-width: 800px) {
+      nav { padding: 18px 6%; }
+
+      header { min-height: 650px; }
+      header h1 { font-size: 38px; }
+      header h2 { font-size: 21px; }
+
+      h3 { font-size: 31px; }
+      section { padding: 56px 6%; }
+
+      .profile-grid, .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-box, .program-box {
+        min-height: auto;
+        padding: 34px 24px;
+      }
+
+      .timeline { padding-left: 22px; }
+
+      .logo-wrap {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo-mark {
+        width: 104px;
+        height: 44px;
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+
+<body class="show-de">
+
+  <nav>
+    <div class="logo-wrap">
+      <div class="logo-mark">NIQ</div>
+      <div class="logo-text">
+        Jan Kraege
+        <span class="logo-small">
+          <span class="lang-de inline">Bewerbung Junior Consultant Customer Success</span>
+          <span class="lang-en inline">Junior Consultant Customer Success Application</span>
+        </span>
+      </div>
+    </div>
+
+    <ul>
+      <li><a href="#intro"><span class="lang-de inline">Über mich</span><span class="lang-en inline">About Me</span></a></li>
+      <li><a href="#profile"><span class="lang-de inline">Profil</span><span class="lang-en inline">Profile</span></a></li>
+      <li><a href="#journey"><span class="lang-de inline">Werdegang</span><span class="lang-en inline">Journey</span></a></li>
+      <li><a href="#niq"><span class="lang-de inline">Warum NIQ</span><span class="lang-en inline">Why NIQ</span></a></li>
+      <li><a href="#program"><span class="lang-de inline">Rollen-Fit</span><span class="lang-en inline">Role Fit</span></a></li>
+      <li><a href="#requirements"><span class="lang-de inline">Anforderungen</span><span class="lang-en inline">Requirements</span></a></li>
+      <li><a href="#ideas"><span class="lang-de inline">Fokus</span><span class="lang-en inline">Focus</span></a></li>
+      <li><button class="language-toggle" id="languageToggle" type="button">English</button></li>
+      <li><a class="nav-button" href="#contact"><span class="lang-de inline">Kontakt</span><span class="lang-en inline">Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="data-shape one"></div>
+    <div class="data-shape two"></div>
+    <div class="data-shape three"></div>
+
+    <div class="hero-content">
+      <p class="application-tag lang-de">NIQ Bewerbung</p>
+      <p class="application-tag lang-en">NIQ Application</p>
+
+      <h1 class="lang-de">(Junior) Consultant<br>Customer Success</h1>
+      <h1 class="lang-en">(Junior) Consultant<br>Customer Success</h1>
+
+      <h2 class="lang-de">Markt- und Kundendaten verstehen, relevante Insights ableiten und daraus klare Empfehlungen für Kunden entwickeln.</h2>
+      <h2 class="lang-en">Turning market and customer data into relevant insights, clear recommendations and stronger client outcomes.</h2>
+
+      <p class="tagline lang-de">Business Management Graduate • Customer Insights • Marktanalyse • Präsentationen • Internationale Erfahrung</p>
+      <p class="tagline lang-en">Business Management Graduate • Customer Insights • Market Analysis • Presentations • International Experience</p>
+
+      <div class="hero-pill lang-de">Customer Success • Consumer Intelligence • Beratung • Data Storytelling</div>
+      <div class="hero-pill lang-en">Customer Success • Consumer Intelligence • Consulting • Data Storytelling</div>
+    </div>
+  </header>
+
+  <section id="intro">
+    <div class="intro-box">
+      <h3 class="lang-de">Liebes NIQ Team,</h3>
+      <h3 class="lang-en">Dear NIQ Team,</h3>
+      <div class="accent-line"></div>
+
+      <p class="lang-de">Mein Name ist Jan Kraege und ich habe meinen Master of Business Management an der University of Technology Sydney abgeschlossen.</p>
+      <p class="lang-en">My name is Jan Kraege and I have completed my Master of Business Management at the University of Technology Sydney.</p>
+
+      <p class="lang-de">Während meines Studiums und meiner beruflichen Stationen in Deutschland und Australien habe ich praktische Erfahrung in Marktanalyse, Customer Behaviour, Kundensegmentierung, Competitive Benchmarking, Performance Analysis und der Entwicklung datenbasierter Handlungsempfehlungen gesammelt.</p>
+      <p class="lang-en">Across my studies and professional experience in Germany and Australia, I gained hands-on experience in market analysis, customer behaviour, segmentation, competitive benchmarking, performance analysis and the development of data-driven recommendations.</p>
+
+      <p class="lang-de">Die Position als Junior Consultant Customer Success spricht mich besonders an, weil sie genau die Bereiche verbindet, in denen ich mich weiterentwickeln möchte: <strong>Kundenberatung, Consumer Intelligence, datenbasierte Insights, Präsentationen, Stakeholder-Management und vertriebsunterstützende Zusammenarbeit</strong>.</p>
+      <p class="lang-en">The Junior Consultant Customer Success position strongly appeals to me because it combines exactly the areas in which I want to grow: <strong>client consulting, consumer intelligence, data-driven insights, presentations, stakeholder management and sales-supporting collaboration</strong>.</p>
+    </div>
+
+    <div class="status-box">
+      <h4 class="lang-de">Aktueller Status</h4>
+      <h4 class="lang-en">Current Status</h4>
+      <p class="lang-de">Ich habe meinen Master abgeschlossen und suche nun eine Einstiegsposition, in der ich analytisches Denken mit Kundenkontakt, Beratung und verständlicher Kommunikation verbinden kann.</p>
+      <p class="lang-en">I have completed my Master’s degree and am now looking for an entry-level role that combines analytical thinking with client interaction, consulting and clear communication.</p>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h3>My Profile in 60 Seconds</h3>
+    <div class="accent-line"></div>
+
+    <p class="section-subtitle lang-de">Ein analytischer und kommunikationsstarker Business Graduate mit internationaler Erfahrung und besonderem Interesse an Consumer Intelligence, Customer Success und datenbasierter Beratung.</p>
+    <p class="section-subtitle lang-en">An analytical and communicative business graduate with international experience and a strong interest in consumer intelligence, customer success and data-driven consulting.</p>
+
+    <div class="profile-grid">
+      <div class="profile-box">
+        <div class="emoji">📊</div>
+        <h4 class="lang-de">Analytisches Denken</h4>
+        <h4 class="lang-en">Analytical Thinking</h4>
+        <p class="lang-de">Ich arbeite gerne mit Markt-, Kunden- und Wettbewerbsdaten und strukturiere komplexe Informationen zu klaren Kernaussagen.</p>
+        <p class="lang-en">I enjoy working with market, customer and competitor data and structuring complex information into clear key messages.</p>
+      </div>
+
+      <div class="profile-box">
+        <div class="emoji">🔎</div>
+        <h4 class="lang-de">Customer & Market Insights</h4>
+        <h4 class="lang-en">Customer & Market Insights</h4>
+        <p class="lang-de">Bei BRITA Australia analysierte ich Kundensegmente, Customer Behaviour, Marktpotenzial und kommerzielle Machbarkeit.</p>
+        <p class="lang-en">At BRITA Australia, I analysed customer segments, customer behaviour, market potential and commercial viability.</p>
+      </div>
+
+      <div class="profile-box">
+        <div class="emoji">💬</div>
+        <h4 class="lang-de">Präsentation & Storyline</h4>
+        <h4 class="lang-en">Presentation & Storyline</h4>
+        <p class="lang-de">Ich bereite Ergebnisse strukturiert auf und übersetze Analysen in nachvollziehbare Empfehlungen für unterschiedliche Stakeholder.</p>
+        <p class="lang-en">I structure findings clearly and translate analysis into understandable recommendations for different stakeholders.</p>
+      </div>
+
+      <div class="profile-box">
+        <div class="emoji">🌍</div>
+        <h4 class="lang-de">Internationale Zusammenarbeit</h4>
+        <h4 class="lang-en">International Collaboration</h4>
+        <p class="lang-de">Studium und Arbeit in Australien haben meine Anpassungsfähigkeit, Eigenständigkeit und interkulturelle Kommunikation gestärkt.</p>
+        <p class="lang-en">Studying and working in Australia strengthened my adaptability, independence and intercultural communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <h3 class="lang-de">Meine internationale Reise</h3>
+    <h3 class="lang-en">My International Journey</h3>
+    <div class="accent-line"></div>
+
+    <div class="timeline">
+      <div>
+        <strong class="lang-de">🇩🇪 Deutschland — Bachelor in Business Administration (2020–2024)</strong>
+        <strong class="lang-en">🇩🇪 Germany — Bachelor in Business Administration (2020–2024)</strong>
+        <br />
+        <span class="lang-de inline">An der Hochschule Fresenius in Wiesbaden setzte ich Schwerpunkte in Marketing, International Management und Organisationspsychologie.</span>
+        <span class="lang-en inline">At Hochschule Fresenius in Wiesbaden, I focused on Marketing, International Management and Organisational Psychology.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">🇦🇺 Australien — Auslandssemester an der UTS (2022)</strong>
+        <strong class="lang-en">🇦🇺 Australia — Exchange Semester at UTS (2022)</strong>
+        <br />
+        <span class="lang-de inline">Das Auslandssemester legte den Grundstein für meine weitere akademische und berufliche Entwicklung in Sydney.</span>
+        <span class="lang-en inline">The exchange semester laid the foundation for my further academic and professional development in Sydney.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">🇦🇺 BRITA Australia — Sales & Marketing Assistant (Nov 2022 – Apr 2023)</strong>
+        <strong class="lang-en">🇦🇺 BRITA Australia — Sales & Marketing Assistant (Nov 2022 – Apr 2023)</strong>
+        <br />
+        <span class="lang-de inline">Ich arbeitete an Marktanalysen, Kundensegmentierung, Customer Behaviour, Brand Tracking und einer Machbarkeitsanalyse für ein potenzielles Subscription Model. Die Ergebnisse wurden in einer Managementpräsentation mit strategischer Empfehlung zusammengeführt.</span>
+        <span class="lang-en inline">I worked on market analysis, customer segmentation, customer behaviour, brand tracking and a feasibility assessment for a potential subscription model. The findings were consolidated into a management presentation with a strategic recommendation.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">🇩🇪 Bachelorarbeit — Supply Chains im australischen Markt (2024)</strong>
+        <strong class="lang-en">🇩🇪 Bachelor Thesis — Supply Chains in the Australian Market (2024)</strong>
+        <br />
+        <span class="lang-de inline">In einer Case Study zu BRITA verband ich Marktbedingungen, Supply-Chain-Fragen und strategische Unternehmensentscheidungen.</span>
+        <span class="lang-en inline">In a BRITA case study, I connected market conditions, supply-chain topics and strategic business decisions.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">🇦🇺 Master of Business Management an der UTS (Feb 2025 – Jun 2026)</strong>
+        <strong class="lang-en">🇦🇺 Master of Business Management at UTS (Feb 2025 – Jun 2026)</strong>
+        <br />
+        <span class="lang-de inline">Mit Schwerpunkten in Global Strategic Management und Global Supply Chain Management vertiefte ich mein strategisches und analytisches Profil.</span>
+        <span class="lang-en inline">With a focus on Global Strategic Management and Global Supply Chain Management, I strengthened my strategic and analytical profile.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">🇦🇺 Tokyo Headspa — Marketing Intern (Jan 2026 – May 2026)</strong>
+        <strong class="lang-en">🇦🇺 Tokyo Headspa — Marketing Intern (Jan 2026 – May 2026)</strong>
+        <br />
+        <span class="lang-de inline">Ich unterstützte Competitive Benchmarking, Marktanalysen, Kampagnenoptimierung, Performance Analysis und Empfehlungen zur Erweiterung des Serviceportfolios.</span>
+        <span class="lang-en inline">I supported competitive benchmarking, market analysis, campaign optimisation, performance analysis and recommendations for service portfolio expansion.</span>
+      </div>
+
+      <div>
+        <strong class="lang-de">📈 Nächster Schritt: NIQ?</strong>
+        <strong class="lang-en">📈 Next Step: NIQ?</strong>
+        <br />
+        <span class="lang-de inline">Die Position verbindet meine bisherigen Erfahrungen mit meinem Ziel, mich in Customer Success, Beratung, Consumer Intelligence und Data Storytelling weiterzuentwickeln.</span>
+        <span class="lang-en inline">The role connects my previous experience with my goal of growing in customer success, consulting, consumer intelligence and data storytelling.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-band">
+    <h3 class="lang-de">Daten in relevante Kundenentscheidungen übersetzen</h3>
+    <h3 class="lang-en">Turning Data Into Relevant Client Decisions</h3>
+    <p class="lang-de">Mich motiviert die Frage, wie aus großen Mengen an Markt- und Konsumentendaten verständliche Erkenntnisse entstehen, die Kunden tatsächlich bei ihren Entscheidungen unterstützen.</p>
+    <p class="lang-en">I am motivated by the question of how large amounts of market and consumer data can be transformed into clear insights that genuinely support client decisions.</p>
+    <p class="lang-de">Genau an dieser Schnittstelle aus Analyse, Storytelling, Beratung und Zusammenarbeit sehe ich meine berufliche Entwicklung.</p>
+    <p class="lang-en">I see my professional development exactly at this intersection of analysis, storytelling, consulting and collaboration.</p>
+  </section>
+
+  <section id="niq">
+    <h3>Why NIQ?</h3>
+    <div class="accent-line"></div>
+
+    <div class="intro">
+      <p class="lang-de">NIQ verbindet Consumer Intelligence, moderne Analytics und direkte Kundenberatung. Besonders spannend finde ich, dass Daten nicht isoliert betrachtet werden, sondern genutzt werden, um Marktveränderungen zu erklären, Potenziale sichtbar zu machen und konkrete Wachstumsentscheidungen zu unterstützen.</p>
+      <p class="lang-en">NIQ combines consumer intelligence, modern analytics and direct client consulting. I am particularly interested in how data is not viewed in isolation but used to explain market changes, reveal opportunities and support concrete growth decisions.</p>
+
+      <p class="lang-de">Die ausgeschriebene Position bietet einen strukturierten Einstieg: erfahrene Customer Success Manager unterstützen, Kundenanforderungen analysieren, Präsentationen und Workshops vorbereiten und zunehmend selbst Verantwortung übernehmen.</p>
+      <p class="lang-en">The advertised role offers a structured entry point: supporting experienced Customer Success Managers, analysing client requirements, preparing presentations and workshops and gradually taking on more responsibility.</p>
+
+      <p class="lang-de">Auch der Fokus auf Tech & Durables spricht mich an, da technologische Produktkategorien von schnellen Marktveränderungen, neuen Nutzungsmustern und hohem Informationsbedarf geprägt sind.</p>
+      <p class="lang-en">The focus on Tech & Durables also appeals to me, as technology-related product categories are shaped by rapid market change, evolving usage patterns and a strong need for relevant information.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <h3 class="lang-de">Warum diese Rolle zu mir passt</h3>
+    <h3 class="lang-en">Why This Role Fits Me</h3>
+    <div class="accent-line"></div>
+
+    <div class="program-grid">
+      <div class="program-box">
+        <div class="emoji">🤝</div>
+        <h4 class="lang-de">Customer Success</h4>
+        <h4 class="lang-en">Customer Success</h4>
+        <p class="lang-de">Ich möchte Kundenanforderungen verstehen, passende Lösungsansätze mitentwickeln und langfristig zu einem verlässlichen Ansprechpartner werden.</p>
+        <p class="lang-en">I want to understand client requirements, help develop suitable solutions and grow into a trusted point of contact.</p>
+      </div>
+
+      <div class="program-box">
+        <div class="emoji">📊</div>
+        <h4 class="lang-de">Analytics & Insights</h4>
+        <h4 class="lang-en">Analytics & Insights</h4>
+        <p class="lang-de">Meine bisherigen Aufgaben umfassten Marktanalysen, Kundensegmentierung, Competitive Benchmarking und kommerzielle Bewertungen.</p>
+        <p class="lang-en">My previous responsibilities included market analysis, customer segmentation, competitive benchmarking and commercial assessments.</p>
+      </div>
+
+      <div class="program-box">
+        <div class="emoji">🧩</div>
+        <h4 class="lang-de">Stakeholder Collaboration</h4>
+        <h4 class="lang-en">Stakeholder Collaboration</h4>
+        <p class="lang-de">Bei BRITA arbeitete ich cross-funktional mit Marketing, Sales und E-Commerce und lernte, unterschiedliche Perspektiven zusammenzuführen.</p>
+        <p class="lang-en">At BRITA, I worked cross-functionally with Marketing, Sales and E-commerce and learned to bring different perspectives together.</p>
+      </div>
+
+      <div class="program-box">
+        <div class="emoji">📣</div>
+        <h4 class="lang-de">Data Storytelling</h4>
+        <h4 class="lang-en">Data Storytelling</h4>
+        <p class="lang-de">Mich interessiert besonders, wie Analyseergebnisse in klare Storylines, Präsentationen und umsetzbare Empfehlungen übersetzt werden.</p>
+        <p class="lang-en">I am particularly interested in translating analytical findings into clear storylines, presentations and actionable recommendations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="requirements">
+    <h3 class="lang-de">Direkter Fit zu den Anforderungen</h3>
+    <h3 class="lang-en">Direct Match With the Requirements</h3>
+    <div class="accent-line"></div>
+
+    <p class="section-subtitle lang-de">NIQ sucht einen wirtschaftswissenschaftlichen Graduate mit analytischer Denkweise, erster Praxiserfahrung, Kommunikationsstärke, Kundenorientierung, Lernbereitschaft sowie fließenden Deutsch- und Englischkenntnissen.</p>
+    <p class="section-subtitle lang-en">NIQ is looking for a business graduate with analytical thinking, initial practical experience, communication skills, customer orientation, eagerness to learn and fluent German and English.</p>
+
+    <div class="cards">
+      <div class="card accent">
+        <div class="emoji">🎓</div>
+        <h4 class="lang-de">Wirtschaftlicher Studienhintergrund</h4>
+        <h4 class="lang-en">Business Education</h4>
+        <p class="lang-de">Master of Business Management sowie Bachelor of Business Administration mit relevanten Schwerpunkten in Strategie, Marketing und internationalem Management.</p>
+        <p class="lang-en">Master of Business Management and Bachelor of Business Administration with relevant focus areas in strategy, marketing and international management.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">📈</div>
+        <h4 class="lang-de">Markt- & Kundenanalysen</h4>
+        <h4 class="lang-en">Market & Customer Analysis</h4>
+        <p class="lang-de">Erfahrung in Kundensegmentierung, Customer Behaviour, Competitive Benchmarking, Brand Tracking und Performance Analysis.</p>
+        <p class="lang-en">Experience in customer segmentation, customer behaviour, competitive benchmarking, brand tracking and performance analysis.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">📝</div>
+        <h4 class="lang-de">Handlungsempfehlungen</h4>
+        <h4 class="lang-en">Actionable Recommendations</h4>
+        <p class="lang-de">Bei BRITA leitete ich aus einer Machbarkeitsanalyse eine strategische Empfehlung ab, die in die Managemententscheidung einfloss.</p>
+        <p class="lang-en">At BRITA, I derived a strategic recommendation from a feasibility analysis that contributed to a management decision.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">🗣️</div>
+        <h4 class="lang-de">Kommunikation & Präsentationen</h4>
+        <h4 class="lang-en">Communication & Presentations</h4>
+        <p class="lang-de">Ich kann komplexe Inhalte strukturiert aufbereiten, verständlich erklären und adressatengerecht präsentieren.</p>
+        <p class="lang-en">I can structure complex content, explain it clearly and present it appropriately for different audiences.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">🌍</div>
+        <h4 class="lang-de">Deutsch & Englisch</h4>
+        <h4 class="lang-en">German & English</h4>
+        <p class="lang-de">Deutsch ist meine Muttersprache; Englisch beherrsche ich fließend auf C1-Niveau und habe es mehrere Jahre im Studien- und Arbeitsalltag genutzt.</p>
+        <p class="lang-en">German is my native language; I speak fluent English at C1 level and used it for several years in academic and professional environments.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">🚀</div>
+        <h4 class="lang-de">Lernbereitschaft & Verantwortung</h4>
+        <h4 class="lang-en">Learning Agility & Ownership</h4>
+        <p class="lang-de">Meine internationalen Stationen zeigen, dass ich mich schnell in neue Themen einarbeite, Verantwortung übernehme und offen mit neuen Herausforderungen umgehe.</p>
+        <p class="lang-en">My international experience demonstrates that I learn new topics quickly, take ownership and approach new challenges with an open mindset.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ideas">
+    <h3 class="lang-de">Drei Themen, die mich bei NIQ besonders interessieren</h3>
+    <h3 class="lang-en">Three Topics I Find Especially Interesting at NIQ</h3>
+    <div class="accent-line"></div>
+
+    <div class="cards">
+      <div class="card accent">
+        <div class="emoji">🛍️</div>
+        <h4 class="lang-de">Consumer Buying Behaviour</h4>
+        <h4 class="lang-en">Consumer Buying Behaviour</h4>
+        <p class="lang-de">Wie verändern sich Kaufentscheidungen, Kategorien und Markenpräferenzen – und welche Chancen ergeben sich daraus für Unternehmen?</p>
+        <p class="lang-en">How are purchase decisions, categories and brand preferences changing, and what opportunities does this create for companies?</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">💻</div>
+        <h4 class="lang-de">Tech & Durables</h4>
+        <h4 class="lang-en">Tech & Durables</h4>
+        <p class="lang-de">Schnelle Innovationszyklen und veränderte Nutzungsgewohnheiten machen diese Märkte besonders daten- und beratungsintensiv.</p>
+        <p class="lang-en">Rapid innovation cycles and evolving usage habits make these markets especially data- and consulting-intensive.</p>
+      </div>
+
+      <div class="card accent">
+        <div class="emoji">📖</div>
+        <h4 class="lang-de">Vom Insight zur Storyline</h4>
+        <h4 class="lang-en">From Insight to Storyline</h4>
+        <p class="lang-de">Mich reizt, Daten so aufzubereiten, dass Kunden nicht nur Zahlen sehen, sondern Zusammenhänge verstehen und Entscheidungen treffen können.</p>
+        <p class="lang-en">I am motivated by presenting data in a way that helps clients not only see numbers but understand relationships and make decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <h3 class="lang-de">Meine Motivation</h3>
+    <h3 class="lang-en">My Motivation</h3>
+    <div class="accent-line"></div>
+
+    <p class="lang-de">Ich habe in internationalen Umfeldern studiert und gearbeitet und dabei besonders gerne an Aufgaben gearbeitet, bei denen Daten, Marktverständnis und klare Kommunikation zusammenkommen.</p>
+    <p class="lang-en">I studied and worked in international environments and particularly enjoyed tasks where data, market understanding and clear communication came together.</p>
+
+    <p class="lang-de">Jetzt möchte ich meine analytischen Fähigkeiten in einer kundenorientierten Rolle weiterentwickeln, zunehmend Verantwortung übernehmen und lernen, wie Consumer Intelligence in messbaren Kundennutzen übersetzt wird.</p>
+    <p class="lang-en">I now want to develop my analytical skills in a client-oriented role, gradually take on more responsibility and learn how consumer intelligence is translated into measurable client value.</p>
+
+    <p class="lang-de">Die Position als Junior Consultant Customer Success bei NIQ bietet dafür aus meiner Sicht das ideale Umfeld.</p>
+    <p class="lang-en">The Junior Consultant Customer Success position at NIQ offers exactly the environment I am looking for.</p>
+  </section>
+
+  <footer id="contact">
+    <p><strong>Jan Kraege</strong></p>
+    <p>Email: <a href="mailto:jan.kraege@icloud.com">jan.kraege@icloud.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">linkedin.com/in/jan-kraege</a></p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById("languageToggle");
+
+    function setLanguage(language) {
+      if (language === "en") {
+        document.body.classList.remove("show-de");
+        document.body.classList.add("show-en");
+        document.documentElement.lang = "en";
+        toggleButton.textContent = "Deutsch";
+      } else {
+        document.body.classList.remove("show-en");
+        document.body.classList.add("show-de");
+        document.documentElement.lang = "de";
+        toggleButton.textContent = "English";
+      }
+    }
+
+    toggleButton.addEventListener("click", function () {
+      const currentlyGerman = document.body.classList.contains("show-de");
+      setLanguage(currentlyGerman ? "en" : "de");
+    });
+
+    setLanguage("de");
+  </script>
+
+</body>
+</html>

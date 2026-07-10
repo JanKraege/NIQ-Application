@@ -667,6 +667,54 @@
         font-size: 25px;
       }
     }
+  
+    /* Stacked requirements layout for better readability */
+    #requirements .cards {
+      grid-template-columns: 1fr;
+      max-width: 920px;
+      margin: 24px auto 0;
+      gap: 20px;
+    }
+
+    #requirements .card {
+      min-height: auto;
+      padding: 30px 34px;
+      text-align: left;
+      border-top: none;
+      border-left: 7px solid var(--blue);
+    }
+
+    #requirements .card:nth-child(even) {
+      border-left-color: var(--red);
+    }
+
+    #requirements .card .emoji {
+      text-align: left;
+      margin-bottom: 6px;
+    }
+
+    #requirements .card h4 {
+      font-size: 24px;
+      line-height: 1.25;
+      margin: 4px 0 10px;
+      overflow-wrap: anywhere;
+    }
+
+    #requirements .card p {
+      margin: 0;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 800px) {
+      #requirements .card {
+        padding: 26px 24px;
+      }
+
+      #requirements .card h4 {
+        font-size: 21px;
+      }
+    }
+
   </style>
 </head>
 
@@ -736,6 +784,14 @@
       <p class="lang-de">Die Position als Junior Consultant Customer Success spricht mich besonders an, weil sie genau die Bereiche verbindet, in denen ich mich weiterentwickeln möchte: <strong>Kundenberatung, Consumer Intelligence, datenbasierte Insights, Präsentationen, Stakeholder-Management und vertriebsunterstützende Zusammenarbeit</strong>.</p>
       <p class="lang-en">The Junior Consultant Customer Success position strongly appeals to me because it combines exactly the areas in which I want to grow: <strong>client consulting, consumer intelligence, data-driven insights, presentations, stakeholder management and sales-supporting collaboration</strong>.</p>
     </div>
+
+    <div class="status-box">
+      <h4 class="lang-de">Aktueller Status</h4>
+      <h4 class="lang-en">Current Status</h4>
+      <p class="lang-de">Ich habe meinen Master abgeschlossen und suche nun eine Einstiegsposition, in der ich analytisches Denken mit Kundenkontakt, Beratung und verständlicher Kommunikation verbinden kann.</p>
+      <p class="lang-en">I have completed my Master’s degree and am now looking for an entry-level role that combines analytical thinking with client interaction, consulting and clear communication.</p>
+    </div>
+  </section>
 
   <section id="profile">
     <h3>My Profile in 60 Seconds</h3>
